@@ -4,6 +4,18 @@ We often cite papers using their arXiv versions without noting that they are alr
 We introduce __Rebiber__, a simple tool in Python to fix them automatically. It is based on the official conference information from the [DBLP](https://dblp.org/) or [the ACL anthology](https://www.aclweb.org/anthology/) (for NLP confernces)! You can check the list of suported conferences [here](#supported-conferences).
 
 
+# Rebiber for Robotics
+Based on the [rebiber](https://github.com/yuchenlin/rebiber), this project adds bib data from the robotics and control field conference, include `ICRA`,`IROS`,`RSS`,`CORL`,`CDC`,`ACC`,`L4DC`. 
+Due to the limitation of DBLP export rules (first 1000 hits only), some conference papers are missing.
+
+**Conferences with more than 1000 accepted papers**
+| Name | Years |
+| --- | ----------- |
+|ICRA| `2020`,`2019`,`2018`,`2014`|
+| IROS| `2018` |
+| CDC | `2011` -- `2019` |
+| ACC | `2018`,`2016`,`2013`,`2012` |
+
 ## Installation
 
 ```bash
@@ -25,7 +37,7 @@ Normalize your bibtex file with the official converence information:
 ```bash 
 rebiber -i /path/to/input.bib -o /path/to/output.bib
 ```
-You can find a pair of example input and output files in `rebiber/example_input.bib` and `rebiber/example_output.bib`.
+You can find a pair of example input and output files in `rebiber4robot/example_input.bib` and `rebiber4robot/example_output.bib`.
 You can also specify your own bib list files by `-l /path/to/bib_list.txt`. If you don't specify any `-o` then it will be the same as the `-i`.
 <!-- Or 
 ```bash
@@ -78,6 +90,13 @@ The following conferences are supported and their bib/json files are in our `dat
 
 | Name | Years |
 | --- | ----------- |
+|ICRA| 2010 -- 2020|
+| IROS| 2010 -- 2019 |
+| RSS | 2011 -- 2019 |
+| CORL | 2017 -- 2019 |
+| CDC | 2011 -- 2020 |
+| ACC | 2011 -- 2020 |
+| L4DC | 2020 |
 | ACL Anthology |  (until 2021-01) |
 | AAAI | 2010 -- 2020 |
 | AISTATS | 2013 -- 2020 |
@@ -132,7 +151,3 @@ Take ICLR2020 as an example:
 python bib2json.py -i data/iclr2020.bib -o data/iclr2020.json
 ```
 - Step 4: Add its path to `bib_list.txt`.
-
-## Contact
-
-Please email yuchen.lin@usc.edu or create Github issues here if you have any questions or suggestions. 
